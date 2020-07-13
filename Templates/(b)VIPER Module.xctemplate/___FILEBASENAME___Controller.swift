@@ -9,16 +9,11 @@
 import UIKit
 import SwiftUI
 
-final class ChannelDetailController: UIHostingController<ChannelDetailView>, Coordinatable {
+final class ___VARIABLE_ModuleName___Controller: UIHostingController<___VARIABLE_ModuleName___View>, Coordinatable {
 
-    static func newInstance(view: ChannelDetailView) -> ChannelDetailController {
-        return ChannelDetailController(rootView: view)
+    static func newInstance(view: ___VARIABLE_ModuleName___View) -> ___VARIABLE_ModuleName___Controller {
+        return ___VARIABLE_ModuleName___Controller(rootView: view)
     }
 
     var parentCoordinator: Coordinator?
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true
-    }
 }

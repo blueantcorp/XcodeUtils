@@ -8,14 +8,9 @@
 
 import UIKit
 
-final class ChannelDetailRouter: RouterInterface {
-    weak var presenter: ChannelDetailPresenterRouterInterface!
+final class ___VARIABLE_ModuleName___Router: RouterInterface {
+    weak var presenter: ___VARIABLE_ModuleName___PresenterRouterInterface!
     weak var viewController: UIViewController?
 }
 
-extension ChannelDetailRouter: ChannelDetailRouterPresenterInterface {
-    func back() {
-        viewController?.navigationController?.popToRootViewController(animated: true)
-    }
-}
-
+extension ___VARIABLE_ModuleName___Router: ___VARIABLE_ModuleName___RouterPresenterInterface {}

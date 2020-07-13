@@ -8,29 +8,13 @@
 
 import Combine
 
-final class ChannelDetailViewModel: ObservableObject {
+final class ___VARIABLE_ModuleName___ViewModel: ObservableObject {
 
     enum ViewState {
         case loading, success, failed
     }
-    
-    let id: Int
-    
-    init(id: Int) {
-        self.id = id
-    }
 
-    let objectWillChange = ObservableObjectPublisher()
+    @Published var state: ViewState = .loading
 
-    @Published var state: ViewState = .loading {
-        willSet {
-            self.objectWillChange.send()
-        }
-    }
-
-    @Published var item: ChannelEntity? {
-        willSet {
-            self.objectWillChange.send()
-        }
-    }
+    @Published var name: String = "___VARIABLE_ModuleName___"
 }

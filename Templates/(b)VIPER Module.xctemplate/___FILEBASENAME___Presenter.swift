@@ -8,36 +8,17 @@
 
 import RxSwift
 
-final class ChannelDetailPresenter: PresenterInterface {
-    var router: ChannelDetailRouterPresenterInterface!
-    var interactor: ChannelDetailInteractorPresenterInterface!
+final class ___VARIABLE_ModuleName___Presenter: PresenterInterface {
+    var router: ___VARIABLE_ModuleName___RouterPresenterInterface!
+    var interactor: ___VARIABLE_ModuleName___InteractorPresenterInterface!
 
-    weak var viewModel: ChannelDetailViewModel!
+    weak var viewModel: ___VARIABLE_ModuleName___ViewModel!
 
     private let disposeBag = DisposeBag()
 }
 
-extension ChannelDetailPresenter: ChannelDetailPresenterRouterInterface {}
+extension ___VARIABLE_ModuleName___Presenter: ___VARIABLE_ModuleName___PresenterRouterInterface {}
 
-extension ChannelDetailPresenter: ChannelDetailPresenterInteractorInterface {}
+extension ___VARIABLE_ModuleName___Presenter: ___VARIABLE_ModuleName___PresenterInteractorInterface {}
 
-extension ChannelDetailPresenter: ChannelDetailPresenterViewInterface {
-    func getDetail(id: Int) {
-        self.viewModel.state = .loading
-        self.interactor.getDetail(id: id)
-            .subscribe(onSuccess: { [weak self] item in
-                if let channel = item.first {
-                    self?.viewModel.item = channel
-                    self?.viewModel.state = .success
-                }
-                }, onError: { [weak self] error in
-                    print(error)
-                    self?.viewModel.state = .failed
-            })
-            .disposed(by: disposeBag)
-    }
-    
-    func back() {
-        router.back()
-    }
-}
+extension ___VARIABLE_ModuleName___Presenter: ___VARIABLE_ModuleName___PresenterViewInterface {}

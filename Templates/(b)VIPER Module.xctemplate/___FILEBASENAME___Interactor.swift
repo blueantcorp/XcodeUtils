@@ -9,15 +9,8 @@
 import RxSwift
 import Moya
 
-final class ChannelDetailInteractor: InteractorInterface {
-    weak var presenter: ChannelDetailPresenterInteractorInterface!
-    private let client = AyobaMoyaProvider()
+final class ___VARIABLE_ModuleName___Interactor: InteractorInterface {
+    weak var presenter: ___VARIABLE_ModuleName___PresenterInteractorInterface!
 }
 
-extension ChannelDetailInteractor: ChannelDetailInteractorPresenterInterface {
-    func getDetail(id: Int) -> Single<[ChannelEntity]> {
-        return client.request(.getChannelDetail(id: id))
-            .filterSuccessfulStatusCodes()
-            .map([ChannelEntity].self)
-    }
-}
+extension ___VARIABLE_ModuleName___Interactor: ___VARIABLE_ModuleName___InteractorPresenterInterface {}

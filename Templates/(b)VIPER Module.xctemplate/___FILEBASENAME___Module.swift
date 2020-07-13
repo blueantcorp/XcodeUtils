@@ -9,42 +9,35 @@
 import RxSwift
 
 // MARK: - Router
-protocol ChannelDetailRouterPresenterInterface: RouterPresenterInterface {
-    func back()
-}
+protocol ___VARIABLE_ModuleName___RouterPresenterInterface: RouterPresenterInterface {}
 
 // MARK: - Presenter
-protocol ChannelDetailPresenterRouterInterface: PresenterRouterInterface {}
-protocol ChannelDetailPresenterInteractorInterface: PresenterInteractorInterface {}
-protocol ChannelDetailPresenterViewInterface: PresenterViewInterface {
-    func getDetail(id: Int)
-    func back()
-}
+protocol ___VARIABLE_ModuleName___PresenterRouterInterface: PresenterRouterInterface {}
+protocol ___VARIABLE_ModuleName___PresenterInteractorInterface: PresenterInteractorInterface {}
+protocol ___VARIABLE_ModuleName___PresenterViewInterface: PresenterViewInterface {}
 
 // MARK: - Interactor
-protocol ChannelDetailInteractorPresenterInterface: InteractorPresenterInterface {
-   func getDetail(id: Int) -> Single<[ChannelEntity]>
-}
+protocol ___VARIABLE_ModuleName___InteractorPresenterInterface: InteractorPresenterInterface {}
 
-final class ChannelDetailModule: ModuleInterface {
+final class ___VARIABLE_ModuleName___Module: ModuleInterface {
 
-    typealias View = ChannelDetailView
-    typealias Presenter = ChannelDetailPresenter
-    typealias Router = ChannelDetailRouter
-    typealias Interactor = ChannelDetailInteractor
+    typealias View = ___VARIABLE_ModuleName___View
+    typealias Presenter = ___VARIABLE_ModuleName___Presenter
+    typealias Router = ___VARIABLE_ModuleName___Router
+    typealias Interactor = ___VARIABLE_ModuleName___Interactor
 
-    static func build(id: Int) -> Coordinatable {
+    static func build() -> Coordinatable {
         let presenter = Presenter()
         let interactor = Interactor()
         let router = Router()
 
-        let viewModel = ChannelDetailViewModel(id: id)
+        let viewModel = ___VARIABLE_ModuleName___ViewModel()
         let view = View(presenter: presenter, viewModel: viewModel)
         presenter.viewModel = viewModel
 
         Self.assemble(presenter: presenter, router: router, interactor: interactor)
 
-        let viewController = ChannelDetailController.newInstance(view: view)
+        let viewController = ___VARIABLE_ModuleName___Controller.newInstance(view: view)
         router.viewController = viewController
         return viewController
     }
