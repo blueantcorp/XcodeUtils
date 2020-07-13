@@ -16,4 +16,9 @@ final class ___VARIABLE_ModuleName___Controller: UIHostingController<___VARIABLE
     }
 
     var parentCoordinator: Coordinator?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.title = "___VARIABLE_ModuleName___"
+    }
 }
