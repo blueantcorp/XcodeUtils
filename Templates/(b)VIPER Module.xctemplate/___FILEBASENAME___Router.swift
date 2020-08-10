@@ -6,11 +6,10 @@
 //  ___COPYRIGHT___
 //
 
-import UIKit
+import Foundation
 
 final class ___VARIABLE_ModuleName___Router: RouterInterface {
     weak var presenter: ___VARIABLE_ModuleName___PresenterRouterInterface!
-    weak var viewController: UIViewController?
 }
 
 extension ___VARIABLE_ModuleName___Router: ___VARIABLE_ModuleName___RouterPresenterInterface {}

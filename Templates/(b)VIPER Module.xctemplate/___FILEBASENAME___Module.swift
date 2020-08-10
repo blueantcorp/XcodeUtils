@@ -6,7 +6,7 @@
 //  ___COPYRIGHT___
 //
 
-import RxSwift
+import SwiftUI
 
 // MARK: - Router
 protocol ___VARIABLE_ModuleName___RouterPresenterInterface: RouterPresenterInterface {}
@@ -26,7 +26,7 @@ final class ___VARIABLE_ModuleName___Module: ModuleInterface {
     typealias Router = ___VARIABLE_ModuleName___Router
     typealias Interactor = ___VARIABLE_ModuleName___Interactor
 
-    static func build() -> Coordinatable {
+    static func build() -> View {
         let presenter = Presenter()
         let interactor = Interactor()
         let router = Router()
@@ -37,8 +37,6 @@ final class ___VARIABLE_ModuleName___Module: ModuleInterface {
 
         Self.assemble(presenter: presenter, router: router, interactor: interactor)
 
-        let viewController = ___VARIABLE_ModuleName___Controller.newInstance(view: view)
-        router.viewController = viewController
-        return viewController
+        return view
     }
 }

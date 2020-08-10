@@ -6,8 +6,7 @@
 //  ___COPYRIGHT___
 //
 
-import RxSwift
-import Moya
+import SwiftUI
 
 final class ___VARIABLE_ModuleName___Interactor: InteractorInterface {
     weak var presenter: ___VARIABLE_ModuleName___PresenterInteractorInterface!

@@ -12,8 +12,6 @@ struct ___VARIABLE_ModuleName___View: ViewInterface, View {
 
     var presenter: ___VARIABLE_ModuleName___PresenterViewInterface!
 
-    @SwiftUI.Environment(\.imageCache) var cache: ImageCache
-
     @ObservedObject
     var viewModel: ___VARIABLE_ModuleName___ViewModel
 
